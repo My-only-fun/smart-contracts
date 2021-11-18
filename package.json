@@ -1,0 +1,19 @@
+{
+  "name": "my-only-fun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MyOnflyFunTeam",
+  "license": "",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.6.0",
+    "truffle": "^5.4.19"
+  }
+}

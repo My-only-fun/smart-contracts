@@ -6,7 +6,11 @@ Core smart contracts of **MyOnlyFun** application.
 * [Ganache](https://www.trufflesuite.com/ganache)
 * [Infura](https://infura.io/)
 
-
+## Setup
+Install dependencies :
+```sh
+npm i
+```
 
 ## Build
 
@@ -15,8 +19,6 @@ To build your smart contracts, you can run :
 ```sh
 truffle compile
 ```
-
-
 
 ## Test
 
