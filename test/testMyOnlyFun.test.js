@@ -11,12 +11,6 @@ contract("MyOnlyFun", (accounts) => {
 
 
  describe("create and deploy OnlyFunERC20 token", async () => {
-/*   
-before("adopt a pet using accounts[0]", async () => {
-     await adoption.adopt(8, { from: accounts[0] });
-     expectedAdopter = accounts[0];
-   });
-*/
 
     // Test the initial state of the contracts
     it("Tokens should be empty array at init", async () => {
