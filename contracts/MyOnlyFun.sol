@@ -9,6 +9,7 @@ contract MyOnlyFun {
     address[] tokens;
 
     // mapping of token to owner
+    // mapping (address (OnlyFunERC20 token) => address (owner)) owners;
     mapping(address => address) owners;
     
     // Create and deploy token
@@ -25,8 +26,11 @@ contract MyOnlyFun {
             decimals,
             initialSupply
         );
-
+        // add token address to list of tokens
         tokens.push(address(newToken));
+
+        // add owner to mapping
+        owners[address(newToken)] = msg.sender;
         return newToken;
     }
 

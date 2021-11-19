@@ -10,7 +10,7 @@ contract OnlyFunERC20 is ERC20 {
         string memory symbol,
         uint8 decimals, 
         uint256 initialSupply
-    ) public ERC20(name, symbol) {
+    ) ERC20(name, symbol) {
         _mint(msg.sender, initialSupply * (10**uint256(decimals)));
     }
 }
