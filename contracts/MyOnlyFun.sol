@@ -39,4 +39,10 @@ contract MyOnlyFun {
         return tokens;
     }
 
+    // get token owner
+    function getTokenOwner(address token) external view returns (address) {
+        return owners[token];
+    }
+
+
 }

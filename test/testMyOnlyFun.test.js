@@ -41,6 +41,13 @@ before("adopt a pet using accounts[0]", async () => {
         assert.equal(tokens[0], createdToken.receipt.rawLogs[0].address, "Tokens address is not correct");
     });
 
+    // Test token owner
+    it("Created token should have the same owner as the stored one", async () => {
+        let ownerAddress = await myOnlyFun.getTokenOwner(createdToken.receipt.rawLogs[0].address);
+        
+        assert.equal(ownerAddress, accounts[0], "Owner of the created OnlyFunERC20 should be us");
+    });
+
 
  });
  
