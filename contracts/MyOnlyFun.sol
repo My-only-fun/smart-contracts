@@ -44,5 +44,9 @@ contract MyOnlyFun {
         return owners[token];
     }
 
+    // get smart contract address
+    function getContractAddress() external view returns (address) {
+        return address(this);
+    }
 
 }

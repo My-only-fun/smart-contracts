@@ -10,6 +10,19 @@ contract("MyOnlyFun", (accounts) => {
  });
 
 
+describe("MyOnlyFun", () => {
+    it("should deploy", async () => {
+        assert.ok(myOnlyFun.address);
+    });
+
+    it("Get smartcontract address", async () => {
+        let address = await myOnlyFun.getContractAddress();
+        console.log("MyOnlyFun Smartcontract address: " + address);
+        assert.equal(address, myOnlyFun.address);
+    });
+
+});
+
  describe("create and deploy OnlyFunERC20 token", async () => {
 
     // Test the initial state of the contracts
@@ -32,6 +45,7 @@ contract("MyOnlyFun", (accounts) => {
     it("Created token should have the same address as the stored one", async () => {
         let tokens = await myOnlyFun.getTokens();
         createdToken = JSON.parse(JSON.stringify(lastCreatedToken));
+        console.log("Created token: " + createdToken.receipt.rawLogs[0].address);
         assert.equal(tokens[0], createdToken.receipt.rawLogs[0].address, "Tokens address is not correct");
     });
 
