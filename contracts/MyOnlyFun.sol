@@ -16,18 +16,20 @@ contract MyOnlyFun {
     function createAndDeployOnlyFunERC20(
         string calldata name,
         string calldata symbol,
-        uint8 decimals,
         uint256 initialSupply
     ) external returns (OnlyFunERC20 creditsAddress) {
+        uint256 defaultDecimals = 1000000000000000000;
 
         OnlyFunERC20 newToken = new OnlyFunERC20(
             name,
             symbol,
-            decimals,
-            initialSupply
+            initialSupply //* defaultDecimals
         );
         // add token address to list of tokens
         tokens.push(address(newToken));
+
+        // transfer all tokens to owner
+        newToken.transfer(msg.sender, initialSupply * defaultDecimals);
 
         // add owner to mapping
         owners[address(newToken)] = msg.sender;

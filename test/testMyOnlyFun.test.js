@@ -36,7 +36,7 @@ describe("MyOnlyFun", () => {
     // Test to create a token
     it("Should create a OnlyFunERC20 token", async () => {
         // create a token
-        lastCreatedToken = await myOnlyFun.createAndDeployOnlyFunERC20("MyOnlyFun", "MFY", 18, 1000000, {from: accounts[0]});
+        lastCreatedToken = await myOnlyFun.createAndDeployOnlyFunERC20("MyOnlyFun", "MFY", 1000000, {from: accounts[0]});
         let tokens = await myOnlyFun.getTokens();
         assert.equal(tokens.length, 1, "Tokens array is not correct");
     });
